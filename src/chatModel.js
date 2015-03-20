@@ -1,25 +1,24 @@
 (function(){
 
-  window.chats = {
+  var chatArray = [];
+  window.chatModel = {
 
-    chatArray: [],
     data: {},
     fetch: function(){
       $.ajax({
         type: 'GET',
         url: 'http://chat.api.mks.io/chats',
         success: function (data) {
-          chats.chatArray = data; 
+          chatArray = data; 
           console.log(data);
           App.chatEvents.emit('change:chats', data);
         }
       }); 
-
     },
 
     create: function(apiToken, message){
-      data.apiToken = apiToken;
-      data.message = message;
+      this.data.apiToken = apiToken;
+      this.data.message = message;
     },
 
     post: function(data){
@@ -32,6 +31,10 @@
           // eventually emit an event here
         }
       })
+    },
+
+    map: function(callback){
+      return chatArray.map(callback);
     }
   }
 })(); 
