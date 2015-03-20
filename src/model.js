@@ -6,10 +6,11 @@
       $.ajax({
         type: 'GET',
         url: 'http://chat.api.mks.io/chats',
-        success: function (chats) {
-         console.log("Got chats:", chats)
+        success: function (data) {
+          App.chatEvents.emit('change:chats', data)
         }
       }); 
+
     }
 
 
