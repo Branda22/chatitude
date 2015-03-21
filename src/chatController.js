@@ -11,8 +11,7 @@
 
   // view
   Chats.view = function(){
-    return $('<div class="chatBoard">').append(
-      $('<h2>').text("Chat Board"),
+    return $('<h2>').text("Chat Board").append(
       chatForm(),
       chatModel.map(chatView)
     )

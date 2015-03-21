@@ -12,7 +12,11 @@
     </div>  
 
     <div class="pure-u-3-4"> 
-      <div id="app"></div>
+      
+      <div id="app">
+
+      </div>
+      <div id="chatBoard"></div>
     </div>
   </div>
 
@@ -25,10 +29,10 @@
   <script type="text/javascript" src="src/userModel.js"></script> <script type="text/javascript" src="src/userController.js"></script>
   <script type="text/javascript">
 
-    var elem = $("#app");
-    var elem2 = $("#forms");
-    Chats.mount(elem);
-    Users.mount(elem2);
+    var chatBoard = $("#chatBoard");
+    var forms = $("#forms");
+    Chats.mount(chatBoard);
+    Users.mount(forms);
   
   </script>
 </body>
