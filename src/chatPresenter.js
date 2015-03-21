@@ -38,9 +38,9 @@
   // Helper view function function
   function chatView (chat) {
     var message = sanitizeString(chat.message);
-    return $('<div class="chat">').append(
+    return $('<div class="chat panel">').append(
       $('<p>').append("user: ", chat.user),
-      $('<p>').append("message : ", message)
+      $('<p>').append(message)
     )
   }
 

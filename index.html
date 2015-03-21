@@ -2,29 +2,37 @@
 <html>
 <head>
   <title>Chattitude</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="forms">
-    <h1>SIGN UP</h1>
-    <form id="signup">
-     username: <input type="text" name="username">
-     password: <input type="text" name="password">
-     <input type="button" name="signup" value="Sign Up">
-    </form>
-    <h1>SIGN IN</h1>
-    <form id="signin">
-     username: <input type="text" name="username">
-     password: <input type="text" name="password">
-     <input type="button" name="signin" value="Sign In">
-    </form>
-    <h1>Type your message</h1>
-    <form id="message">
-      <textarea name="newMessage" rows="5" cols="50"></textarea>
-      <input type="button" name="newMessage" value="Post">
-    </form>
+  <div class="pure-g">
+    <div class="pure-u-1-4"> 
+      <div id="forms">
+        <h1>SIGN UP</h1>
+        <form class="pure-form pure-form-stacked" id="signup">
+         username: <input type="text" name="username">
+         password: <input type="text" name="password">
+         <input class="pure-button pure-button-primary" type="button" name="signup" value="Sign Up">
+        </form>
+        <h1>SIGN IN</h1>
+        <form class="pure-form pure-form-stacked" id="signin">
+         username: <input type="text" name="username">
+         password: <input type="text" name="password">
+         <input class="pure-button pure-button-primary" type="button" name="signin" value="Sign In">
+        </form>
+      </div>
+    </div>  
 
+    <div class="pure-u-3-4"> 
+      <h1>Type your message</h1>
+      <form class="pure-form pure-form-stacked" id="message">
+        <textarea name="newMessage" rows="5" cols="50"></textarea>
+        <input class="pure-button pure-button-primary" type="button" name="newMessage" value="Post">
+      </form>   
+      <div id="app"></div>
+    </div>
   </div>
-  <div id="app"></div>
 
 
   <script type="text/javascript" src="src/jquery-2.0.3.min.js"></script>
