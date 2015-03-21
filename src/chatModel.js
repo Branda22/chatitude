@@ -25,7 +25,7 @@
       $.ajax({
         type: 'POST',
         url: 'http://chat.api.mks.io/chats',
-        data: JSON.stringify(data)
+        data: JSON.stringify(data),
         success: function(){
           console.log("message posted");
           // eventually emit an event here

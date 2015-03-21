@@ -2,14 +2,22 @@
 <html>
 <head>
   <title></title>
+</head>
+<body>
+  <div id="app"></div>
+
+
   <script type="text/javascript" src="src/jquery-2.0.3.min.js"></script>
   <script type="text/javascript" src="src/minivents.min.js"></script>
   <script type="text/javascript" src="src/app.js"></script>
-  <script type="text/javascript" src="src/model.js"></script>
-  <script type="text/javascript" src="src/presenter.js"></script>
-</head>
-<body>
+  <script type="text/javascript" src="src/chatModel.js"></script>
+  <script type="text/javascript" src="src/chatPresenter.js"></script>
+  <script type="text/javascript" src="src/userModel.js"></script> <script type="text/javascript" src="src/userPresenter.js"></script>
+  <script type="text/javascript">
 
-
+    var elem = $("#app");
+    Chat.mount(elem);
+  
+  </script>
 </body>
 </html>
