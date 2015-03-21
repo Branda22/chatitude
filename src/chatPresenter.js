@@ -1,10 +1,18 @@
 (function(){
 
-  window.Chat = {}
+  window.Chat = {};
 
   // Presenter constructor
   Chat.Presenter = function( element ){
     var $view = $(element);
+    var $newMessage = $("#message textarea[name='newMessage']");
+
+    $('input[name="newMessage"]').on("click", function(e){
+      e.preventDefault();
+      var apiToken = window.localStorage.getItem("apiToken");
+      var newMessage = $newMessage.val();
+      window.chatModel.create(apiToken, newMessage);
+    });
 
     this.render = function(){
       $view.empty().append(
@@ -22,12 +30,17 @@
     )
   }
 
+  function sanitizeString (str){
+    str = str.replace(/([^a-z0-9áéíóúñü_-\s\.,]|[\t\n\f\r\v\0])/gim,"");
+    return str.trim();
+  }
 
   // Helper view function function
   function chatView (chat) {
+    var message = sanitizeString(chat.message);
     return $('<div class="chat">').append(
       $('<p>').append("user: ", chat.user),
-      $('<p>').append("message : ", chat.message)
+      $('<p>').append("message : ", message)
     )
   }
 

@@ -4,8 +4,10 @@
 
   User.Presenter = function(){
     var self = this;
-    var $username = $('input[name=username');
-    var $password = $('input[name=username');
+    var $usernameUp = $('#signup input[name=username]');
+    var $passwordUp = $('#signup input[name=password]');
+    var $usernameIn = $('#signin input[name=username]');
+    var $passwordIn = $('#signin input[name=password]');
     var data = {};
 
     // listeners
@@ -21,19 +23,23 @@
 
     // methods
     this.getSignup = function () {
-      this.getData();
+      this.getData( $usernameUp, $passwordUp );
       window.users.signup(data);
     }
 
     this.getSignin = function () {
-      this.getData();
+      this.getData($usernameIn, $passwordIn );
       window.users.signin(data);
     }
 
-    this.getData = function () {
-      data.username = $username.val();
-      data.password = $password.val();
-      data = JSON.stringify(data);
+    this.getData = function (username, password) {
+      data.username = username.val();
+      data.password = password.val();
+      // data = JSON.stringify(data);
     }
+  }
+
+  User.mount = function(){
+    var presenter = new User.Presenter();
   }
 })();

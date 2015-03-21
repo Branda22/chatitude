@@ -17,15 +17,16 @@
     },
 
     create: function(apiToken, message){
-      this.data.apiToken = apiToken;
-      this.data.message = message;
+      window.chatModel.data.apiToken = apiToken;
+      window.chatModel.data.message = message;
+      window.chatModel.post(this.data)
     },
 
     post: function(data){
       $.ajax({
         type: 'POST',
         url: 'http://chat.api.mks.io/chats',
-        data: JSON.stringify(data),
+        data: data,
         success: function(){
           console.log("message posted");
           // eventually emit an event here

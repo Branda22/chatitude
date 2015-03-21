@@ -17,6 +17,11 @@
      password: <input type="text" name="password">
      <input type="button" name="signin" value="Sign In">
     </form>
+    <h1>Type your message</h1>
+    <form id="message">
+      <textarea name="newMessage" rows="5" cols="50"></textarea>
+      <input type="button" name="newMessage" value="Post">
+    </form>
 
   </div>
   <div id="app"></div>
@@ -32,6 +37,7 @@
 
     var elem = $("#app");
     Chat.mount(elem);
+    User.mount();
   
   </script>
 </body>
