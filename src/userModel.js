@@ -1,12 +1,11 @@
 (function(){
 
   window.users = {
-    apiToken: undefined,
     signup: function(data){
       $.ajax({
         type: 'POST',
-        url: 'http://chat.api.mks.io/chats',
-        data: JSON.stringify(data),
+        url: 'http://chat.api.mks.io/signup',
+        data: data,
         success: function(){
           console.log("Succcesful signup!") 
         },
@@ -19,10 +18,10 @@
     signin: function(data){
       $.ajax({
         type: 'POST',
-        url: 'http://chat.api.mks.io/chats',
-        data: JSON.stringify(data),
+        url: 'http://chat.api.mks.io/signin',
+        data: data,
         success: function(data){
-          users.apiToken = data.apiToken;
+          localStorage.setItem("apiToken", data.apiToken)
           // todo: emit a change:user event here
         }
       })
